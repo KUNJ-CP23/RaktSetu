@@ -3,55 +3,56 @@ const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
 
-    name: String,
+    UserID: { 
+        type: Number,
+        required: true,
+        unique: true
+    },
 
-    email: { 
+    Name: String,
+
+    Email: { 
         type: String, 
         unique: true 
     },
-    
-    phone: String,
 
-    password: String,
+    Phone: String,
 
-    roleId: { 
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Role' 
-    },
+    Password: String,
 
-    gender: String,
+    RoleID: Number,  
 
-    dob: Date,
+    Gender: String,
 
-    bloodGroupId: { 
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'BloodGroup' 
-    },
+    DOB: Date,
 
-    location: String,
+    BloodGroupID: Number, 
 
-    lastDonationDate: Date,
+    Location: String,
 
-    privacySettings: Object,
+    LastDonationDate: Date,
 
-    governmentIdProof: String,
+    PrivacySettings: Object,
 
-    profileImage: String,
+    GovernmentIDProof: String,
 
-    verified: { 
+    ProfileImage: String,
+
+    Verified: { 
         type: Boolean, 
         default: false 
     },
 
-    createdAt: { 
+    CreatedAt: { 
         type: Date, 
         default: Date.now 
     },
 
-    modifiedAt: { 
+    ModifiedAt: { 
         type: Date, 
         default: Date.now 
     }
+
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema, 'Users');
