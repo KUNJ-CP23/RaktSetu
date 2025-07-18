@@ -3,38 +3,45 @@ const mongoose = require('mongoose');
 
 const bloodInventorySchema = new mongoose.Schema({
 
-    bloodBankId: { 
+    InventoryID: { 
+        type: Number, 
+        required: true, 
+        unique: true 
+    },
+    
+    BloodBankID: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'BloodBank' 
     },
     
-    bloodGroupId: { 
+    BloodGroupID: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'BloodGroup' 
     },
     
-    quantity: Number,
+    Quantity: Number,
     
-    collectionDate: Date,
+    CollectionDate: Date,
     
-    expiryDate: Date,
+    ExpiryDate: Date,
     
-    donorId: { 
+    DonorID: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User' 
     },
     
-    qrCodeTag: String,
+    QRCodeTag: String,
     
-    createdAt: { 
+    CreatedAt: { 
         type: Date, 
         default: Date.now 
     },
     
-    modifiedAt: { 
+    ModifiedAt: { 
         type: Date, 
         default: Date.now 
     }
+
 });
 
-module.exports = mongoose.model('BloodInventory', bloodInventorySchema);
+module.exports = mongoose.model('BloodInventory', bloodInventorySchema, 'BloodInventory');
