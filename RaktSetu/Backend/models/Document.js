@@ -2,35 +2,42 @@
 const mongoose = require('mongoose');
 
 const documentSchema = new mongoose.Schema({
-    
-    uploadedBy: { 
+
+    DocumentID: { 
+        type: Number, 
+        required: true, 
+        unique: true 
+    },
+
+    UploadedBy: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User' 
     },
-    
-    userRoleId: { 
+
+    UserRoleID: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Role' 
     },
-    
-    type: String,
-    
-    filePath: String,
-    
-    uploadedAt: { 
+
+    Type: String,
+
+    FilePath: String,
+
+    UploadedAt: { 
         type: Date, 
         default: Date.now 
     },
-    
-    createdAt: { 
+
+    CreatedAt: { 
         type: Date, 
         default: Date.now 
     },
-    
-    modifiedAt: { 
+
+    ModifiedAt: { 
         type: Date, 
         default: Date.now 
     }
+
 });
 
-module.exports = mongoose.model('Document', documentSchema);
+module.exports = mongoose.model('Document', documentSchema, 'Documents');
