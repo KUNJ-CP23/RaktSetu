@@ -2,33 +2,40 @@
 const mongoose = require('mongoose');
 
 const campaignSchema = new mongoose.Schema({
-    
-    title: String,
-    
-    organizedBy: { 
+
+    CampaignID: { 
+        type: Number, 
+        required: true, 
+        unique: true 
+    },
+
+    Title: String,
+
+    OrganizedBy: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User' 
     },
-    
-    location: String,
-    
-    startDate: Date,
-    
-    endDate: Date,
-    
-    participantsCount: Number,
-    
-    status: String,
-    
-    createdAt: { 
+
+    Location: String,
+
+    StartDate: Date,
+
+    EndDate: Date,
+
+    ParticipantsCount: Number,
+
+    Status: String,
+
+    CreatedAt: { 
         type: Date, 
         default: Date.now 
     },
-    
-    modifiedAt: { 
+
+    ModifiedAt: { 
         type: Date, 
         default: Date.now 
     }
+
 });
 
-module.exports = mongoose.model('Campaign', campaignSchema);
+module.exports = mongoose.model('Campaign', campaignSchema, 'Campaigns');
