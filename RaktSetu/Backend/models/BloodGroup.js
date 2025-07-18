@@ -3,29 +3,28 @@ const mongoose = require('mongoose');
 
 const bloodGroupSchema = new mongoose.Schema({
 
-    name: { 
-        type: String, 
-        required: true 
+    BloodGroupID: { 
+        type: Number, 
+        required: true, 
+        unique: true 
     },
-    
-    rhFactor: { 
-        type: String, 
-        required: true 
-    },
-    
-    compatibleWith: [{ 
-        type: String 
-    }],
-        
-    createdAt: { 
+
+    Name: String,
+
+    RHFactor: String,
+
+    CompatibleWith: [String],
+
+    CreatedAt: { 
         type: Date, 
         default: Date.now 
     },
 
-    modifiedAt: { 
+    ModifiedAt: { 
         type: Date, 
         default: Date.now 
     }
+    
 });
 
-module.exports = mongoose.model('BloodGroup', bloodGroupSchema);
+module.exports = mongoose.model('BloodGroup', bloodGroupSchema, 'BloodGroups');
