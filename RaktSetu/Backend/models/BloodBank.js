@@ -3,25 +3,32 @@ const mongoose = require('mongoose');
 
 const bloodBankSchema = new mongoose.Schema({
 
-    name: String,
-    
-    contact: String,
-    
-    location: String,
-    
-    licenseDoc: String,
-    
-    registeredDate: Date,
-    
-    createdAt: { 
+    BloodBankID: { 
+        type: Number, 
+        required: true, 
+        unique: true 
+    },
+
+    Name: String,
+
+    Contact: String,
+
+    Location: String,
+
+    LicenseDoc: String,
+
+    RegisteredDate: Date,
+
+    CreatedAt: { 
         type: Date, 
         default: Date.now 
     },
-    
-    modifiedAt: { 
+
+    ModifiedAt: { 
         type: Date, 
         default: Date.now 
     }
+
 });
 
-module.exports = mongoose.model('BloodBank', bloodBankSchema);
+module.exports = mongoose.model('BloodBank', bloodBankSchema, 'BloodBanks');
