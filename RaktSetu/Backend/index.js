@@ -1,13 +1,15 @@
+require('dotenv').config();
 const http = require('http');
 const mongoose = require('mongoose');
 const url = require('url');
 
+
 // Controllers
 const roleController = require('./controllers/roleController');
 const userController = require('./controllers/userController');
+const bloodGroupController = require('./controllers/bloodGroupController');
 
-// MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/bloodbank', {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -81,6 +83,34 @@ const server = http.createServer(async (req, res) => {
         if (pathname.startsWith('/users/') && req.method === 'DELETE') {
             const id = pathname.split('/')[2];
             return userController.deleteUser(res, id);
+        }
+
+        // ============================
+        // Blood Groups Routes
+        // ============================
+        if (pathname === '/bloodGroups' && req.method === 'GET') {
+            return bloodGroupController.getAllBloodGroups(res);
+        }
+
+        if (pathname.startsWith('/bloodGroups/') && req.method === 'GET') {
+            const id = pathname.split('/')[2];
+            return bloodGroupController.getBloodGroupById(res, id);
+        }
+
+        if (pathname === '/bloodGroups' && req.method === 'POST') {
+            const data = JSON.parse(body);
+            return bloodGroupController.insertBloodGroup(res, data);
+        }
+
+        if (pathname.startsWith('/bloodGroups/') && req.method === 'PUT') {
+            const id = pathname.split('/')[2];
+            const data = JSON.parse(body);
+            return bloodGroupController.updateBloodGroup(res, id, data);
+        }
+
+        if (pathname.startsWith('/bloodGroups/') && req.method === 'DELETE') {
+            const id = pathname.split('/')[2];
+            return bloodGroupController.deleteBloodGroup(res, id);
         }
 
         // ============================
