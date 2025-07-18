@@ -3,23 +3,30 @@ const mongoose = require('mongoose');
 
 const hospitalSchema = new mongoose.Schema({
 
-    name: String,
-    
-    contact: String,
-    
-    location: String,
-    
-    registeredDate: Date,
-    
-    createdAt: { 
+    HospitalID: { 
+        type: Number, 
+        required: true, 
+        unique: true 
+    },
+
+    Name: String,
+
+    Contact: String,
+
+    Location: String,
+
+    RegisteredDate: Date,
+
+    CreatedAt: { 
         type: Date, 
         default: Date.now 
     },
-    
-    modifiedAt: { 
+
+    ModifiedAt: { 
         type: Date, 
         default: Date.now 
     }
+
 });
 
-module.exports = mongoose.model('Hospital', hospitalSchema);
+module.exports = mongoose.model('Hospital', hospitalSchema, 'Hospitals');
