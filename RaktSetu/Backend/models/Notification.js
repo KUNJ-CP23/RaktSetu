@@ -2,35 +2,42 @@
 const mongoose = require('mongoose');
 
 const notificationSchema = new mongoose.Schema({
-    
-    userId: { 
+
+    NotificationID: { 
+        type: Number, 
+        required: true, 
+        unique: true 
+    },
+
+    UserID: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User' 
     },
-    
-    type: String,
-    
-    message: String,
-    
-    seen: { 
+
+    Type: String,
+
+    Message: String,
+
+    Seen: { 
         type: Boolean, 
         default: false 
     },
-    
-    timestamp: { 
+
+    Timestamp: { 
         type: Date, 
         default: Date.now 
     },
-    
-    createdAt: { 
+
+    CreatedAt: { 
         type: Date, 
         default: Date.now 
     },
-    
-    modifiedAt: { 
+
+    ModifiedAt: { 
         type: Date, 
         default: Date.now 
     }
+
 });
 
-module.exports = mongoose.model('Notification', notificationSchema);
+module.exports = mongoose.model('Notification', notificationSchema, 'Notifications');
