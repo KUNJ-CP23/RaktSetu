@@ -3,43 +3,50 @@ const mongoose = require('mongoose');
 
 const requestSchema = new mongoose.Schema({
 
-    requesterId: { 
+    RequestID: { 
+        type: Number, 
+        required: true, 
+        unique: true 
+    },
+
+    RequesterID: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User' 
     },
-    
-    bloodGroupId: { 
+
+    BloodGroupID: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'BloodGroup' 
     },
-    
-    quantity: Number,
-    
-    location: String,
-    
-    urgency: String,
-    
-    status: String,
-    
-    matchedDonorId: { 
+
+    Quantity: Number,
+
+    Location: String,
+
+    Urgency: String,
+
+    Status: String,
+
+    MatchedDonorID: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User' 
     },
-    
-    matchedBloodBankId: { 
+
+    MatchedBloodBankID: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'BloodBank' 
     },
-    
-    createdAt: { 
+
+    CreatedAt: { 
         type: Date, 
         default: Date.now 
     },
-    
-    modifiedAt: { 
+
+    ModifiedAt: { 
         type: Date, 
         default: Date.now 
     }
+
 });
 
-module.exports = mongoose.model('Request', requestSchema);
+module.exports = mongoose.model('Request', requestSchema, 'Requests');
