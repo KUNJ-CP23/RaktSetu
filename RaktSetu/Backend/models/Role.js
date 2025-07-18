@@ -1,26 +1,28 @@
 const mongoose = require('mongoose');
 
 const roleSchema = new mongoose.Schema({
+    
+    RoleID: {
+        type: Number,
+        required: true,
+        unique: true
+    },
 
-    name: {
+    Name: {
         type: String,
         required: true
     },
-  
-    description: {
-        type: String,
-        default: ''
-    },
 
-    createdAt: {
+    CreatedAt: {
         type: Date,
         default: Date.now
     },
-    
-    modifiedAt: {
+
+    ModifiedAt: {
         type: Date,
         default: Date.now
     }
+
 });
 
-module.exports = mongoose.model('Role', roleSchema);
+module.exports = mongoose.model('Role', roleSchema, 'Roles');
