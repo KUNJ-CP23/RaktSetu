@@ -2,40 +2,47 @@
 const mongoose = require('mongoose');
 
 const donorCheckUpReportSchema = new mongoose.Schema({
-
-    donorId: { 
+    
+    ReportID: { 
+        type: Number, 
+        required: true, 
+        unique: true 
+    },
+    
+    DonorID: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User' 
     },
     
-    healthCheckDate: Date,
+    HealthCheckDate: Date,
     
-    sugarLevel: String,
+    SugarLevel: String,
     
-    bp: String,
+    BP: String,
     
-    hemoglobinLevel: Number,
+    HemoglobinLevel: Number,
     
-    weight: Number,
+    Weight: Number,
     
-    healthStatus: String,
+    HealthStatus: String,
     
-    notes: String,
+    Notes: String,
     
-    uploadedBy: { 
+    UploadedBy: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User' 
     },
     
-    createdAt: { 
+    CreatedAt: { 
         type: Date, 
         default: Date.now 
     },
     
-    modifiedAt: { 
+    ModifiedAt: { 
         type: Date, 
         default: Date.now 
     }
+    
 });
 
-module.exports = mongoose.model('DonorCheckUpReport', donorCheckUpReportSchema);
+module.exports = mongoose.model('DonorCheckUpReport', donorCheckUpReportSchema, 'DonorCheckUpReports');
