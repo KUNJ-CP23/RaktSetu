@@ -2,32 +2,42 @@
 const mongoose = require('mongoose');
 
 const adminLogSchema = new mongoose.Schema({
-    
-    adminId: { 
+
+    LogID: { 
+        type: Number, 
+        required: true, 
+        unique: true 
+    },
+
+    AdminID: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User' 
     },
-    
-    action: String,
-    
-    targetId: mongoose.Schema.Types.ObjectId,
-    
-    description: String,
-    
-    timestamp: { 
+
+    Action: String,
+
+    TargetID: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'User' 
+    },
+
+    Description: String,
+
+    Timestamp: { 
         type: Date, 
         default: Date.now 
     },
-    
-    createdAt: { 
+
+    CreatedAt: { 
         type: Date, 
         default: Date.now 
     },
-    
-    modifiedAt: { 
+
+    ModifiedAt: { 
         type: Date, 
         default: Date.now 
     }
+
 });
 
-module.exports = mongoose.model('AdminLog', adminLogSchema);
+module.exports = mongoose.model('AdminLog', adminLogSchema, 'AdminLogs');
