@@ -1,0 +1,99 @@
+.donation-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    color:white;
+}
+
+.search-section input, .search-section select {
+    margin: 10px;
+    padding: 8px;
+}
+
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.donations-list {
+    margin: 20px 0;
+}
+
+.donation-card {
+    display: grid;
+    grid-template-columns: 80px 2fr 1fr 1fr 1fr 120px;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.donor-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 12px;
+    color: white;
+    text-transform: capitalize;
+}
+
+.status-badge.active { background: green; }
+.status-badge.emergency { background: red; }
+.status-badge.completed { background: blue; }
+
+.add-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.donation-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.donation-table th, .donation-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}

@@ -1,0 +1,146 @@
+.inventory-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background: white;
+  border: 2px solid #fecaca;
+  border-radius: 12px;
+  padding: 20px 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.header {
+  text-align: center;
+  background: linear-gradient(90deg, #dc2626, #b91c1c);
+  color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.header p {
+  font-size: 0.9rem;
+  color: #dce1eb;
+}
+
+.alert {
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.alert.success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.alert.error {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.inventory-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.form-group.error input,
+.form-group.error select {
+  border-color: #dc2626;
+}
+
+.qr-section {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, #dc2626, #b91c1c);
+  color: white;
+}
+
+.btn.secondary {
+  background: white;
+  color: #dc2626;
+  border: 1px solid #dc2626;
+}
+
+.btn:disabled {
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Additional Theme Styling */
+.bg-gradient-red {
+  background: linear-gradient(90deg, #dc2626, #b91c1c);
+  color: white;
+}
+
+.blood-drop {
+  animation: pulse 2s infinite;
+  display: inline-block;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.selected {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #fff;
+}

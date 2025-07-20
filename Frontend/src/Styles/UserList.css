@@ -1,0 +1,119 @@
+.user-list-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(12px);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user-list-container h1 {
+  font-size: 2.5rem;
+  color: #dc3545;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.user-table thead {
+  background-color: #dc3545; /* Solid red */
+  color: white;
+}
+
+.user-table th,
+.user-table td {
+  padding: 14px 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.user-table th {
+  font-weight: 600;
+}
+
+.user-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.user-table tbody tr:hover {
+  background-color: #f1f3f5;
+  transition: background-color 0.3s ease;
+}
+
+.user-table td {
+  color: #495057;
+}
+
+.status-active {
+  background: #d4edda;
+  color: #155724;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-inactive {
+  background: #f8d7da;
+  color: #721c24;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-pending {
+  background: #fff3cd;
+  color: #856404;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .user-table thead {
+    display: none;
+  }
+
+  .user-table, .user-table tbody, .user-table tr, .user-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .user-table tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #dee2e6;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+  }
+
+  .user-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .user-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 20px;
+    width: 45%;
+    padding-right: 10px;
+    font-weight: bold;
+    color: #6c757d;
+    text-align: left;
+  }
+}

@@ -1,0 +1,174 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f6f9fc;
+  color: #333;
+}
+
+/* Wrapper */
+.register-wrapper {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Section */
+.register-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.main-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #c62828;
+}
+
+.sub-heading {
+  font-size: 1rem;
+  color: #777;
+  margin-top: 5px;
+}
+
+/* User Selection Boxes */
+.user-selection {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.user-box {
+  flex: 1;
+  background: #fce4ec;
+  margin: 0 10px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.user-box:hover {
+  background: #f8bbd0;
+  border-color: #d81b60;
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Form Section */
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #c62828;
+}
+
+.input-block {
+  margin-bottom: 20px;
+}
+
+.input-block label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.input-block input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+
+.input-block input:focus {
+  border-color: #c62828;
+  outline: none;
+}
+
+/* Blood Group Selection */
+.blood-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.blood-option {
+  padding: 10px 20px;
+  border: 2px solid #c62828;
+  border-radius: 8px;
+  color: #c62828;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.blood-option:hover {
+  background: #c62828;
+  color: #fff;
+}
+
+/* Consent Checkbox */
+.consent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.consent label {
+  font-size: 0.95rem;
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #c62828;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #b71c1c;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .user-selection {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .user-box {
+    margin: 0;
+  }
+
+  .blood-group {
+    justify-content: flex-start;
+  }
+}

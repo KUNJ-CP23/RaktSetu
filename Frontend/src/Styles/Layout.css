@@ -1,0 +1,27 @@
+.bg-gradient-red {
+  background: linear-gradient(90deg, #dc2626, #b91c1c);
+  color: white;
+}
+
+.blood-drop {
+  animation: pulse 2s infinite;
+  display: inline-block; 
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;  /* Smooth transition */
+}
+
+.nav-link:hover, .nav-link.selected {
+  background: #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #fff;
+}
